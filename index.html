@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nirvana — легенда гранжа</title>
+  <meta name="description" content="Фанатский лэндинг о Nirvana: история, альбомы, плейлисты и мерч." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #0b0b0b; --ink: #e7e7e7; --ink-weak:#bdbdbd; --accent:#f7d354; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui; }
+    .title { font-family: Unbounded, Inter, ui-sans-serif, system-ui; }
+    /* subtle noise */
+    .noise { position: relative; }
+    .noise:after { content: ""; position: absolute; inset: 0; background-image: url('https://grainy-gradients.vercel.app/noise.svg'); opacity:.15; pointer-events:none; mix-blend: overlay; }
+    /* glass card */
+    .glass { background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); backdrop-filter: blur(6px); }
+    /* hover underline */
+    .h-underline { background-image: linear-gradient(var(--accent),var(--accent)); background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s ease; }
+    .h-underline:hover { background-size: 100% 2px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-yellow-300"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.5a1 1 0 0 1-2 0V11a1 1 0 0 1 2 0Zm-1-9a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 12 7.5Z"/></svg>
+        <span class="title text-xl tracking-wide">NIRVANA</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="#about" class="h-underline">История</a>
+        <a href="#albums" class="h-underline">Альбомы</a>
+        <a href="#media" class="h-underline">Музыка</a>
+        <a href="#tour" class="h-underline">События</a>
+        <a href="#shop" class="h-underline">Мерч</a>
+        <a href="#newsletter" class="ml-2 rounded-full px-4 py-1.5 text-black bg-yellow-300 font-semibold hover:brightness-95">Подписка</a>
+      </nav>
+      <button id="menuBtn" class="sm:hidden inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10" aria-label="Открыть меню">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-6 h-6"><path stroke="currentColor" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="sm:hidden hidden border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 py-3 grid gap-3 text-sm">
+        <a href="#about" class="py-2">История</a>
+        <a href="#albums" class="py-2">Альбомы</a>
+        <a href="#media" class="py-2">Музыка</a>
+        <a href="#tour" class="py-2">События</a>
+        <a href="#shop" class="py-2">Мерч</a>
+        <a href="#newsletter" class="py-2">Подписка</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden noise">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?q=80&w=2070&auto=format&fit=crop" alt="Гранж-сцена" class="w-full h-full object-cover opacity-35">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 pt-24 pb-28 text-center">
+      <h1 class="title text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+        Nirvana — голос эпохи гранжа
+      </h1>
+      <p class="max-w-2xl mx-auto mt-5 text-lg text-white/80">
+        Легендарная группа из Абердина, изменившая альтернативную сцену 90‑х. Погрузись в историю, музыку и наследие Курта Кобейна, Криста Новоселича и Дэйва Грола.
+      </p>
+      <div class="mt-8 flex items-center justify-center gap-3">
+        <a href="#media" class="px-5 py-3 rounded-xl bg-yellow-300 text-black font-semibold hover:brightness-95">Слушать</a>
+        <a href="#about" class="px-5 py-3 rounded-xl glass hover:bg-white/10">Узнать больше</a>
+      </div>
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+        <div class="glass rounded-2xl p-4">
+          <div class="text-3xl font-extrabold text-yellow-300">1987</div>
+          <div class="text-sm text-white/70">Год основания</div>
+        </div>
+        <div class="glass rounded-2xl p-4">
+          <div class="text-3xl font-extrabold text-yellow-300">75M+</div>
+          <div class="text-sm text-white/70">Проданных записей</div>
+        </div>
+        <div class="glass rounded-2xl p-4">
+          <div class="text-3xl font-extrabold text-yellow-300">3</div>
+          <div class="text-sm text-white/70">Студийных альбома</div>
+        </div>
+        <div class="glass rounded-2xl p-4">
+          <div class="text-3xl font-extrabold text-yellow-300">1994</div>
+          <div class="text-sm text-white/70">Зал славы: 2014</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div class="space-y-5">
+        <h2 class="title text-3xl sm:text-4xl font-extrabold">Кто такие Nirvana?</h2>
+        <p class="text-white/80 leading-relaxed">Nirvana — американская рок‑группа, сформированная в Абердине (штат Вашингтон) в 1987 году. С выходом альбома <em>Nevermind</em> и сингла «Smells Like Teen Spirit» коллектив стал глобальным феноменом и символом гранж‑движения.</p>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="glass rounded-xl p-4"><div class="font-semibold">Курт Кобейн</div><div class="text-sm text-white/70">Вокал, гитара</div></div>
+          <div class="glass rounded-xl p-4"><div class="font-semibold">Крист Новоселич</div><div class="text-sm text-white/70">Бас</div></div>
+          <div class="glass rounded-xl p-4"><div class="font-semibold">Дэйв Грол</div><div class="text-sm text-white/70">Ударные</div></div>
+        </div>
+        <div class="flex gap-3 pt-2">
+          <a href="#timeline" class="h-underline">Хронология</a>
+          <a href="#albums" class="h-underline">Дискография</a>
+          <a href="#media" class="h-underline">Треки</a>
+        </div>
+      </div>
+      <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop" alt="Сцена и гитары" class="w-full h-full object-cover">
+        <div class="absolute inset-0 ring-1 ring-white/10 pointer-events-none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Albums -->
+  <section id="albums" class="py-20 bg-white/[0.02] border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="title text-3xl sm:text-4xl font-extrabold mb-8">Ключевые альбомы</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Nevermind -->
+        <article class="glass rounded-2xl overflow-hidden flex flex-col">
+          <img src="https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg" alt="Nevermind (1991)" class="w-full aspect-square object-cover">
+          <div class="p-5 grow flex flex-col">
+            <h3 class="font-bold text-xl">Nevermind (1991)</h3>
+            <p class="text-sm text-white/80 mt-2">Прорывной альбом с гимном поколения — «Smells Like Teen Spirit» — вывел гранж в мейнстрим.</p>
+            <div class="mt-4 flex gap-2">
+              <a class="px-3 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold" href="#media">Слушать</a>
+              <a class="px-3 py-2 rounded-lg border border-white/15 text-sm" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- In Utero -->
+        <article class="glass rounded-2xl overflow-hidden flex flex-col">
+          <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/In_Utero_%28Nirvana%29_album_cover.jpg" alt="In Utero (1993)" class="w-full aspect-square object-cover">
+          <div class="p-5 grow flex flex-col">
+            <h3 class="font-bold text-xl">In Utero (1993)</h3>
+            <p class="text-sm text-white/80 mt-2">Сырой и дерзкий звук, продюсирование Стива Альбини и откровенные тексты.</p>
+            <div class="mt-4 flex gap-2">
+              <a class="px-3 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold" href="#media">Слушать</a>
+              <a class="px-3 py-2 rounded-lg border border-white/15 text-sm" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- MTV Unplugged -->
+        <article class="glass rounded-2xl overflow-hidden flex flex-col">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Nirvana_mtv_unplugged_in_new_york.png" alt="MTV Unplugged in New York (1994)" class="w-full aspect-square object-cover">
+          <div class="p-5 grow flex flex-col">
+            <h3 class="font-bold text-xl">MTV Unplugged in New York (1994)</h3>
+            <p class="text-sm text-white/80 mt-2">Интимное акустическое выступление, ставшее прощальным заявлением группы.</p>
+            <div class="mt-4 flex gap-2">
+              <a class="px-3 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold" href="#media">Слушать</a>
+              <a class="px-3 py-2 rounded-lg border border-white/15 text-sm" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media / playlists -->
+  <section id="media" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between gap-6 mb-8">
+        <h2 class="title text-3xl sm:text-4xl font-extrabold">Синхронно погружаемся</h2>
+        <div class="text-sm text-white/60">Подборка официальных плейлистов</div>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-4">
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <iframe class="w-full h-full" style="border:0" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1ai9jJ" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+          <div class="mt-4 text-sm text-white/80">Spotify: Essentials / Best Of</div>
+        </div>
+        <div class="glass rounded-2xl p-4">
+          <div class="aspect-video rounded-xl overflow-hidden">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/videoseries?list=PLlqZM4covn1o3iQ0KfYwJ6C3wqA2r2szF" title="YouTube playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="mt-4 text-sm text-white/80">YouTube: Live & Unplugged</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="py-20 bg-white/[0.02] border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="title text-3xl sm:text-4xl font-extrabold mb-10">Хронология</h2>
+      <ol class="relative border-s border-white/10 pl-6 space-y-10">
+        <li>
+          <div class="absolute -left-1.5 mt-1 w-3 h-3 rounded-full bg-yellow-300"></div>
+          <h3 class="font-semibold">1987 — Основание группы</h3>
+          <p class="text-white/70 mt-1">Курт Кобейн и Крист Новоселич создают Nirvana в Абердине.</p>
+        </li>
+        <li>
+          <div class="absolute -left-1.5 mt-1 w-3 h-3 rounded-full bg-yellow-300"></div>
+          <h3 class="font-semibold">1991 — Выходит <em>Nevermind</em></h3>
+          <p class="text-white/70 mt-1">Сингл «Smells Like Teen Spirit» становится мировым хитом.</p>
+        </li>
+        <li>
+          <div class="absolute -left-1.5 mt-1 w-3 h-3 rounded-full bg-yellow-300"></div>
+          <h3 class="font-semibold">1993 — <em>In Utero</em></h3>
+          <p class="text-white/70 mt-1">Резкий и честный звук закрепляет статус группы как культовой.</p>
+        </li>
+        <li>
+          <div class="absolute -left-1.5 mt-1 w-3 h-3 rounded-full bg-yellow-300"></div>
+          <h3 class="font-semibold">1994 — MTV Unplugged</h3>
+          <p class="text-white/70 mt-1">Легендарный акустический сет в Нью‑Йорке выходит отдельным релизом.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Merch -->
+  <section id="shop" class="py-20 bg-white/[0.02] border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="title text-3xl sm:text-4xl font-extrabold mb-8">Мерч и коллекции</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2069&auto=format&fit=crop" alt="Футболка" class="w-full aspect-square object-cover">
+          <div class="p-4">
+            <div class="font-semibold">Футболка Smiley</div>
+            <div class="text-sm text-white/70">Черная, оверсайз</div>
+            <button class="mt-3 w-full px-4 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold">В корзину</button>
+          </div>
+        </div>
+        <div class="glass rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1620799139504-5c012f1bcd61?q=80&w=2070&auto=format&fit=crop" alt="Винил" class="w-full aspect-square object-cover">
+          <div class="p-4">
+            <div class="font-semibold">Nevermind — Vinyl</div>
+            <div class="text-sm text-white/70">180g ремастер</div>
+            <button class="mt-3 w-full px-4 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold">Купить</button>
+          </div>
+        </div>
+        <div class="glass rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1520975922203-b4eabf6bd1ce?q=80&w=2070&auto=format&fit=crop" alt="Постер" class="w-full aspect-square object-cover">
+          <div class="p-4">
+            <div class="font-semibold">Постер Unplugged</div>
+            <div class="text-sm text-white/70">60×90 см, матовый</div>
+            <button class="mt-3 w-full px-4 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold">Купить</button>
+          </div>
+        </div>
+        <div class="glass rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=2070&auto=format&fit=crop" alt="Кепка" class="w-full aspect-square object-cover">
+          <div class="p-4">
+            <div class="font-semibold">Cap — Logo</div>
+            <div class="text-sm text-white/70">Регулируемая</div>
+            <button class="mt-3 w-full px-4 py-2 rounded-lg bg-yellow-300 text-black text-sm font-semibold">Купить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="py-20">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="title text-3xl sm:text-4xl font-extrabold">Будь в курсе</h2>
+      <p class="text-white/75 mt-3">Подпишись на новости, подборки и релизы, посвящённые Nirvana. Никакого спама — только самое важное.</p>
+      <form class="mt-6 flex flex-col sm:flex-row gap-3 justify-center" onsubmit="event.preventDefault(); this.reset(); alert('Спасибо! Мы добавили вас в список.');">
+        <input type="email" required placeholder="your@email.com" class="w-full sm:w-auto px-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none" />
+        <button class="px-5 py-3 rounded-xl bg-yellow-300 text-black font-semibold hover:brightness-95">Подписаться</button>
+      </form>
+      <p class="text-xs text-white/50 mt-3">Нажимая, вы соглашаетесь с обработкой персональных данных.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 items-center justify-between text-sm text-white/60">
+      <div>© <span id="year"></span> Fanmade • NIRVANA Tribute</div>
+      <div class="flex gap-4">
+        <a class="h-underline" href="#about">О группе</a>
+        <a class="h-underline" href="#albums">Альбомы</a>
+        <a class="h-underline" href="#media">Музыка</a>
+        <a class="h-underline" href="#newsletter">Подписка</a>
+      </div>
+      <div class="text-xs">Неофициальный сайт для демонстрации дизайна.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
